@@ -1,0 +1,24 @@
+
+
+
+         
+  <table class="table ">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Addresse</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let societe of Societes">
+        <td>{{ societe.id }}</td>
+        <td>{{ societe.name }}</td>
+        <td>{{ societe.addresse}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+ 
+  

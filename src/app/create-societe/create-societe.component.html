@@ -1,0 +1,52 @@
+
+
+  
+      
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput  [(ngModel)]="name" name="name">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Adresse</mat-label>
+            <input matInput  [(ngModel)]="addresse" name="addresse">
+          </mat-form-field>
+
+          
+        
+          
+        </form>
+          
+        
+        
+        <div class="ml-3 bd-highlight" style="width: 40%;">
+          <img [src]=PhotoFilePath height="250px;" width="200px;">
+          <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+          </div>
+          <button (click)="addSociete()" class="btn btn-primary">
+          Add
+          </button>
+
+          <input type="text" id="name" name="name" class="form-control"
+      required minlength="4" appForbiddenName="bob"
+      [(ngModel)]="name" #name="ngModel">
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert">
+
+  <div *ngIf="name.errors?.['required']">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors?.['minlength']">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors?.['forbiddenName']">
+    Name cannot be Bob.
+  </div>
+
+</div>
+
+          
+      <router-outlet></router-outlet>
+    
+    
